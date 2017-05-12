@@ -65,7 +65,11 @@ public abstract class MqttWireMessage {
 		this.type = type;
 		// Use zero as the default message ID.  Can't use -1, as that is serialized
 		// as 65535, which would be a valid ID.
-		this.msgId = 0;
+		// this.msgId = 0;
+		
+		// Quick fix for websocket connection error. Initialized to a number not equal to zero.
+		// Ideally this needs to be done by the subclsses.
+		this.msgId = 2;
 	}
 	
 	/**
